@@ -1,0 +1,9 @@
+# -*- mode:yaml -*-
+
+postfix-gmail:
+  email: example@gmail.com
+  password: password
+# lookup:
+#   relayhost: '[smtp.gmail.com]:587'
+#   packages: apt packages to install
+#   cacert: path to the thawte cert for gmail
