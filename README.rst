@@ -24,5 +24,5 @@ Requires some pillars:
 * ``postfix-gmail:password`` - your gmail password
 
 Example::
-  salt-call state.sls postfix-gmail pillar='{"postfix-gmail":{"email":"me@gmail.com", "password":"my gmail password"}}'
 
+  salt-call state.sls postfix-gmail pillar='{"postfix-gmail":{"email":"me@gmail.com", "password":"my gmail password"}}'
