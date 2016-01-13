@@ -11,7 +11,7 @@ postfix:
         - file: /etc/postfix/main.cf
         
 # manage /etc/aliases if data found in pillar
-{% if 'aliases' in pillar.get('postfix', '') %}
+{% if 'aliases' in pillar.get('postfix-gmail', '') %}
 {{ postfix.aliases_file }}:
   file.managed:
     - source: salt://postfix-gmail/aliases
