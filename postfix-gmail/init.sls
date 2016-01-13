@@ -9,6 +9,26 @@ postfix:
         - pkg: postfix
     - watch:
         - file: /etc/postfix/main.cf
+        
+# manage /etc/aliases if data found in pillar
+{% if 'aliases' in pillar.get('postfix', '') %}
+{{ postfix.aliases_file }}:
+  file.managed:
+    - source: salt://postfix-gmail/aliases
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+    - require:
+      - pkg: postfix
+
+run-newaliases:
+  cmd.wait:
+    - name: newaliases
+    - cwd: /
+    - watch:
+      - file: {{ postfix.aliases_file }}
+{% endif %}
 
 # copy the cert
 main.cf-cacert:

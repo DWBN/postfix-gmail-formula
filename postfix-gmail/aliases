@@ -1,0 +1,4 @@
+# Managed by Saltstack
+# Do not edit
+# vi: ft=jinja
+{{pillar['postfix']['aliases']}}

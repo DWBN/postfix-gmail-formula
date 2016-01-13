@@ -1,8 +1,12 @@
-# -*- mode:yaml -*-
+# vi: ft=yaml
 
 postfix-gmail:
   email: example@gmail.com
   password: password
+  aliases: |
+    postmaster: root
+    root:  mail@example.com
+
 # lookup:
 #   relayhost: '[smtp.gmail.com]:587'
 #   packages: apt packages to install
