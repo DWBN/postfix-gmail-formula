@@ -1,7 +1,7 @@
 {% set postfix = salt['grains.filter_by']({
   'default' : {
     'packages': ['postfix', 'mailutils', 'libsasl2-2', 'ca-certificates', 'libsasl2-modules'],
-    'cacert': '/etc/ssl/certs/Thawte_Premium_Server_CA.pem',
+    'cacert': '/etc/ssl/certs/thawte_Primary_Root_CA.pem',
     'relayhost': '[smtp.gmail.com]:587',
     'aliases_file': '/etc/aliases'
   }
